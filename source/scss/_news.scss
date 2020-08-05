@@ -1,0 +1,25 @@
+// Новости
+.news {
+  padding-top: 45px;
+  padding-bottom: 25px;
+}
+
+// Заголовок
+.news__title {
+  margin-bottom: 36px;
+
+  font-size: 30px;
+  color: $main-color;
+
+  @include df-tablet {
+    text-align: center;
+    font-size: 40px;
+  }
+}
+
+.news__list {
+}
+
+// Элемент списка
+.news__item {
+}

@@ -1,0 +1,18 @@
+// Отзывы
+.reviews {
+}
+
+// Заголовок секции
+.reviews__title {
+  opacity: 25%;
+  margin-bottom: 32px;
+
+  @include df-tablet {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+.reviews__list {
+}
+.reviews__item {
+}

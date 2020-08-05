@@ -1,0 +1,70 @@
+// Карточка новости
+.news-card {
+  padding-bottom: 47px;
+}
+
+// Заголовок
+.news-card__title {
+  margin-bottom: 22px;
+
+  font-family: $main-font-family;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  @include df-tablet {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+// Ссылка новости
+.news-card__link {
+  transition: 0.2s all ease;
+  color: $black;
+
+  &:hover {
+    color: $secondary-color;
+  }
+
+  @include df-tablet {
+    color: $dark-gray;
+  }
+}
+
+// "Тело" новости
+.news-card__body {
+  display: flex;
+  justify-content: center;
+}
+
+// Дата новости
+.news-card__date {
+  opacity: 25%;
+  min-width: 45px;
+}
+
+// Число новости
+.news-card__date-day {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+// Месяц новости
+.news-card__date--month {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+// Текст новости
+.news-card__text {
+  font-size: 12px;
+  line-height: 18px;
+
+  @include df-tablet {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}

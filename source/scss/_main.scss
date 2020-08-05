@@ -10,6 +10,10 @@
 .main__container {
   display: flex;
   // flex-direction: column;
+
+  @include df-tablet {
+    flex-direction: column-reverse;
+  }
 }
 .main__aside {
   // flex-grow: 0;

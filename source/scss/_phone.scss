@@ -44,8 +44,8 @@
 .phone__link {
   display: block;
 
-  @include df-tablet {
-    // font-size: 0;
+  @include df-laptop {
+    text-align: right;
   }
 }
 
@@ -53,6 +53,9 @@
 .phone__description {
   font-size: 12px;
   color: $white;
+
+  @include df-laptop {
+  }
 
   @include df-tablet {
     display: none;
