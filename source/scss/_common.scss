@@ -1,0 +1,163 @@
+body {
+  background-color: $background-color;
+  font-family: $main-font-family;
+  color: $font-color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-size: $font-size;
+  letter-spacing: 0;
+
+  h1 {
+    font-family: $heading-font-family;
+    font-size: $h1-font-size;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: $heading-font-family;
+    font-size: $h2-font-size;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-family: $heading-font-family;
+    font-size: $h3-font-size;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h4 {
+    font-family: $heading-font-family;
+    font-size: $h4-font-size;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h5 {
+    font-family: $heading-font-family;
+    font-size: $h5-font-size;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h6 {
+    font-family: $heading-font-family;
+    font-size: $h6-font-size;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: $link-text-decoration;
+    color: $link-color;
+
+    // &:visited {
+    //     color: $link-color-visited;
+    // }
+
+    // &:hover {
+    //     color: $link-color-hover;
+    // }
+
+    // &:active,
+    // &:focus {
+    //     color: $link-color-active;
+    // }
+  }
+
+  ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  ol {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  p {
+    font-family: $main-font-family;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .secondary {
+    background-color: $secondary-color;
+    color: $black;
+
+    h1 {
+      color: $black;
+    }
+
+    h2 {
+      color: $black;
+    }
+
+    h3 {
+      color: $black;
+    }
+
+    h4 {
+      color: $black;
+    }
+
+    h5 {
+      color: $black;
+    }
+
+    h6 {
+      color: $black;
+    }
+
+    a {
+      color: $black;
+
+      &:visited {
+        color: $black;
+      }
+
+      // &:hover {
+      //     // color: $link-color-hover;
+      // }
+
+      // &:active,
+      // &:focus {
+      //     // color: $link-color-active;
+      // }
+    }
+  }
+  // @include tablet {
+  //     background-color: #353535;
+// }
+
+  @include desktop {
+    font-size: $desktop-font-size;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.visually-hidden {
+position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

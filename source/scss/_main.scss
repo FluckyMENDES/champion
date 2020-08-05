@@ -1,0 +1,61 @@
+.main {
+  // Толкаем основной контент сверху
+  // т.к. хедер стал fixed
+  @include df-tablet {
+    margin-top: 75px;
+  }
+}
+.container {
+}
+.main__container {
+  display: flex;
+  // flex-direction: column;
+}
+.main__aside {
+  // flex-grow: 0;
+  // flex-shrink: 0;
+  // flex-basis: 25%;
+  width: 25%;
+  // margin-right: 30px;
+  // background-color: mediumvioletred;
+
+  @include df-tablet {
+    width: 100%;
+  }
+}
+.main__catalog {
+  // background-color: mediumslateblue;
+}
+.main__news {
+  // background-color: lightsalmon;
+}
+.main__reviews {
+  // background-color: limegreen;
+}
+
+.main__content {
+  width: 75%;
+  padding-left: 30px;
+
+  @include df-tablet {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.main__search {
+  // background-color: red;
+  margin-bottom: 22px;
+}
+.main__slider {
+  // background-color: green;
+}
+.main__goods {
+  // background-color: blue;
+}
+.main__brands {
+  // background-color: darkcyan;
+}
+.main__about {
+  // background-color: lightcoral;
+}

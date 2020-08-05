@@ -1,0 +1,155 @@
+// // Slider
+.slider {
+  position: relative;
+}
+
+.slider__item {
+  position: relative;
+  background-color: darkcyan;
+  // min-height: 200px;
+  padding-bottom: 20px;
+  min-height: 383px;
+
+  @include df-tablet {
+    min-height: 300px;
+  }
+
+  &::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, white 0%, transparent 60%);
+  }
+}
+
+.slider__content {
+  position: relative;
+  z-index: 1;
+  padding: 22px 36px;
+  display: flex;
+  flex-direction: column;
+  color: $dark-gray;
+  font-family: $main-font-family;
+
+  @include df-tablet {
+    // padding: 10px;
+  }
+}
+
+.slider__title {
+  font-weight: 900;
+  text-transform: uppercase;
+  max-width: 50%;
+  margin-bottom: 64px;
+
+  @include df-tablet {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
+
+.slider__text {
+  max-width: 50%;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 900;
+
+  @include df-tablet {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  & .text--secondary {
+    font-size: 18px;
+  }
+}
+
+.slider__price {
+  text-align: center;
+  font-size: 36px;
+  line-height: 24px;
+  color: $white;
+  font-weight: 900;
+  margin-bottom: 25px;
+
+  @include df-tablet {
+    font-size: 24px;
+  }
+}
+
+.slider__link {
+  // display: block;
+  margin: 0 auto;
+  padding: 6px 34px 5px 17px;
+  color: $white;
+  font-weight: 900;
+  font-size: 14px;
+  min-width: 50px;
+  // line-height: 24px;
+  border: 3px solid $white;
+  border-radius: 20px;
+  text-transform: uppercase;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 284.936 284.936' id='double-arrow' xmlns='http://www.w3.org/2000/svg' fill='white'%3E%3Cpath d='M277.515 135.9L144.464 2.857C142.565.955 140.375 0 137.9 0c-2.472 0-4.659.955-6.562 2.857l-14.277 14.275c-1.903 1.903-2.853 4.089-2.853 6.567 0 2.478.95 4.664 2.853 6.567L229.268 142.47 117.062 254.677c-1.903 1.903-2.853 4.093-2.853 6.564 0 2.477.95 4.667 2.853 6.57l14.277 14.271c1.902 1.905 4.089 2.854 6.562 2.854 2.478 0 4.665-.951 6.563-2.854l133.051-133.044c1.902-1.902 2.851-4.093 2.851-6.567s-.949-4.664-2.851-6.571z'/%3E%3Cpath d='M170.732 142.471c0-2.474-.947-4.665-2.857-6.571L34.833 2.857C32.931.955 30.741 0 28.267 0S23.602.955 21.7 2.857L7.426 17.133C5.52 19.036 4.57 21.222 4.57 23.7c0 2.478.95 4.664 2.856 6.567L119.63 142.471 7.426 254.677c-1.906 1.903-2.856 4.093-2.856 6.564 0 2.477.95 4.667 2.856 6.57l14.273 14.271c1.903 1.905 4.093 2.854 6.567 2.854s4.664-.951 6.567-2.854l133.042-133.044c1.91-1.902 2.857-4.093 2.857-6.567z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: right 11px center;
+
+}
+
+.slider__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Контейнер для точек слайдера
+// ul - плагин слайдера сюда помещает точки
+.slider__dots ul {
+  display: flex;
+  justify-content: center;
+
+  // Точка
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47px;
+    height: 47px;
+    background-color: $secondary-color;
+    border: 4px solid $white;
+    border-radius: 50%;
+    transform: translateY(-25px);
+
+    &:not(:last-child) {
+      margin-right: 45px;
+
+      @include df-tablet {
+        margin-right: 4vw;
+      }
+    }
+
+    // Текст точки
+    & span {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $main-color;
+    }
+  }
+}

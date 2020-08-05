@@ -1,0 +1,62 @@
+.button {
+  font-size: 18px;
+	color: $black;
+
+	border: none;
+
+  transition: 0.2s all ease;
+  cursor: pointer;
+
+  // &:hover,
+  // &:focus {
+    // background-color: #d5cabe;
+  // }
+
+  // &:active {
+    // color: rgba(0,0,0,0.3);
+
+    // background-color: #d5c9bd;
+  // }
+
+  // Кнопка "Х"
+  &--cross {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+
+    // Иконка
+    & .button__icon {
+      fill: $white;
+      opacity: 0;
+      transform: rotate(180deg);
+      transition: 0.2s all ease;
+      transition-delay: 0.6s;
+    }
+  }
+
+	&--main {
+		display: block;
+		width: 100%;
+
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		font-size: 21px;
+		text-align: center;
+	}
+
+	&--white {
+		background: $white;
+
+		box-shadow: 0px 5px 25px rgba($color: $white, $alpha: 0.48);
+	}
+
+  &--alternate {
+    color: $white;
+
+    background: $black;
+
+    border: 2px solid $white;
+    box-shadow: 0px 5px 25px rgba($color: $black, $alpha: 0.48);
+  }
+}

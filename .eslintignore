@@ -1,0 +1,6 @@
+build/**
+/.git
+/.vscode
+node_modules
+gulpfile.js
+.eslintrc.js

@@ -1,0 +1,108 @@
+// Враппер для мобильного меню
+.menu {
+  @include df-tablet {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: 0.5s all ease;
+    pointer-events: none;
+  }
+
+  &--active {
+    @include df-tablet {
+      z-index: 1000;
+
+      overflow-y: auto;
+
+      background-color: rgba($color: $black, $alpha: 0.7);
+      pointer-events: auto;
+
+      // Показываем меню
+      & .menu__list {
+        transform: translateX(0);
+      }
+
+      // Показываем иконку
+      & .menu__icon {
+        opacity: 1;
+        transform: rotate(0);
+      }
+    }
+  }
+}
+
+// Основное меню
+.menu__list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  transition: 1s transform ease;
+  position: relative;
+
+  // Выезжающее меню при меньшем чем 768 разрешении
+  @include df-tablet {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 35vw;
+    // VVVVVVVVVVVVVVVVVVVVVVV
+    height: 100%;
+
+    padding: 15px;
+    // padding-bottom: 80px;
+
+    background-color: $main-color;
+
+    transform: translateX(-135%);
+  }
+}
+
+// Ссылка меню
+.menu__link {
+  display: inline-block;
+  padding: 8px 23px 7px;
+  color: $white;
+  font-family: $secondary-font-family;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: underline;
+  border-radius: 20px;
+
+  &:hover,
+  &:focus {
+    background-color: darken($main-color, 5%);
+  }
+
+  @include df-laptop {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+// Кнопка "Закрыть меню"
+.menu__btn--close {
+  position: absolute;
+  right: -50px;
+
+  display: none;
+
+  @include df-tablet {
+    display: block;
+  }
+}
+
+// Иконка "Крестик"
+// .menu__icon {
+//   fill: $white;
+//   opacity: 0;
+//   transform: rotate(180deg);
+//   transition: 0.2s all ease;
+//   transition-delay: 0.6s;
+// }
