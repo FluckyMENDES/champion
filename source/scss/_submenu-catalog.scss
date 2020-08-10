@@ -1,0 +1,54 @@
+// Блок подменю
+.submenu-catalog {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding-top: 20px;
+
+  border: 2px solid #009fb3;
+
+  background-color: $white;
+
+  opacity: 0;
+  transform: translateX(0%);
+
+  transition: 0.5s all ease;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+// Список подменю
+.submenu-catalog__list {
+  padding-bottom: 30px;
+  border-bottom: 1px solid $border-color;
+}
+
+// Ссылка подменю
+.submenu-catalog__link {
+  display: block;
+  font-size: 12px;
+  padding: 12px 40px;
+  color: #1ab9ce;
+
+  transition: 0.2s all ease;
+
+  &:hover,
+  &:focus {
+    background-color: #71c7d3;
+    color: $white;
+  }
+}
+
+// Показываем подменю при наведении на пункт меню
+.submenu-catalog--active {
+  opacity: 1;
+  transform: translateX(100%);
+}

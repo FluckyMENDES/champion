@@ -1,0 +1,217 @@
+// Карточка товара
+.good {
+  position: relative;
+  padding: 25px;
+  padding-top: 30px;
+  min-height: 383px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $border-color;
+  overflow: hidden;
+
+  // Сдвигаем шапку карточки
+  &:hover .good__header,
+  &:focus .good__header {
+    position: absolute;
+    top: 27px;
+    left: 32px;
+    pointer-events: none;
+
+    // Меняем цвет
+    & .good__title {
+      color: $white;
+    }
+
+    // Меняем цвет
+    & .good__subtitle {
+      color: $white;
+    }
+  }
+
+  // Блок с ценами
+  &:hover .good__prices {
+    pointer-events: none;
+
+    // Меняем цвет
+    & .good__price--new {
+      z-index: 1;
+      color: $white;
+    }
+  }
+
+  // Показываем темную подложку с характеристиками
+  &:hover &__features,
+  &:focus &__link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  // Меняем иконку корзины
+  &:hover &__btn {
+    position: absolute;
+    z-index: 1;
+    bottom: 85px;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: $secondary-color;
+  }
+
+  // Стилизация недоступного товара
+  &--unavailable {
+
+    // Лейбл "В наличии"
+    & .good__available {
+      opacity: 0.3;
+      color: $black;
+      text-decoration: line-through;
+    }
+
+    // Скрываем кнопку "В корзину"
+    & .good__btn {
+      display: none;
+    }
+  }
+}
+
+// Лейбл "В наличии"
+.good__available {
+  position: absolute;
+  bottom: 26px;
+  left: 17px;
+
+  padding: 2px 10px 1px;
+  color: $secondary-color;
+  font-size: 14px;
+  background-color: $white;
+  border-radius: 20px;
+}
+
+// Сторона карточки с характеристиками
+.good__features {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 94px 27px 27px;
+  background-color: rgba($color: $black, $alpha: 0.9);
+  border: 5px solid $secondary-color;
+
+  transform: translateY(-100%);
+  transition: 0.3s all ease;
+}
+
+// Название характеристики
+.good__feature {
+  font-size: 14px;
+  line-height: 24px;
+  color: $white;
+}
+
+// Значение характеристики
+.good__value {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 900;
+  color: $secondary-color;
+}
+
+// Изображение товара
+.good__img {
+  display: block;
+  margin: 0 auto 20px;
+  object-fit: contain;
+  max-height: 180px;
+}
+
+.good__header {
+  @include df-tablet {
+    margin: 0 auto;
+  }
+}
+// Название товара
+.good__title {
+  font-family: $main-font-family;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: normal;
+  font-weight: 900;
+  color: darken($color: $main-color, $amount: 10%);
+}
+
+// Тип товара
+.good__subtitle {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: darken($color: $main-color, $amount: 10%);
+}
+
+// Блок с кнопкой "В корзину"
+.good__footer {
+  margin-top: auto;
+  display: flex;
+}
+
+// Кнопка "В корзину"
+.good__btn {
+  margin-top: auto;
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  font-size: 0;
+  color: transparent;
+  text-transform: lowercase;
+
+  background-color: $light-gray;
+  background-position: 45% 55%;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 -31 512 512' id='supermarket' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M166 300.004h271.004c6.71 0 12.598-4.438 14.414-10.883l60.004-210.004c1.289-4.527.406-9.39-2.434-13.152A15.034 15.034 0 00497.004 60H131.37l-10.723-48.25A15 15 0 00106 0H15C6.71 0 0 6.71 0 15c0 8.293 6.71 15 15 15h78.96l54.169 243.75C132.19 280.68 121 296.543 121 315.004c0 24.812 20.187 45 45 45h271.004c8.293 0 15-6.707 15-15 0-8.29-6.707-15-15-15H166c-8.262 0-15-6.723-15-15s6.738-15 15-15zm-15 105c0 24.816 20.188 45 45.004 45 24.812 0 45-20.184 45-45 0-24.813-20.188-45-45-45-24.816 0-45.004 20.187-45.004 45zm211.004 0c0 24.816 20.187 45 45 45 24.816 0 45-20.184 45-45 0-24.813-20.184-45-45-45-24.813 0-45 20.187-45 45zm0 0' fill='white' /%3E%3C/svg%3E");
+
+  border-radius: 50%;
+  transition: 0.3s font-size, background-color ease;
+
+  &:hover,
+  &:focus {
+    font-size: 14px;
+    min-width: 40px;
+    min-height: 40px;
+    width: auto;
+    height: auto;
+    padding: 10px 25px;
+    background-image: none;
+    color: $white;
+    border-radius: 20px;
+  }
+}
+
+// Блок с ценами
+.good__prices {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+// Старая цена
+.good__price--old {
+  display: block;
+  font-size: 18px;
+  text-decoration: line-through;
+  opacity: 50%;
+  text-align: right;
+}
+
+// Цена со скидкой
+.good__price--new {
+  text-align: right;
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  color: $dark-gray;
+  transition: 0.8s all ease;
+}

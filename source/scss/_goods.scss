@@ -1,0 +1,89 @@
+// Хедер товаров
+.goods__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  @include df-tablet {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+// Заголовок
+.goods__title {
+  opacity: 50%;
+
+  @include df-tablet {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+// Блок с кнопками слайдера
+.goods__controls {
+  display: flex;
+  align-items: center;
+}
+
+// Кнопка слайдера
+.goods__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  fill: $main-color;
+
+  &:hover {
+    fill: $secondary-color;
+  }
+
+  &--prev {
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &--next {
+  }
+}
+
+// Блок с количеством страниц слайдера
+.goods__pages {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+// Общая стилизация для цифр слайдера
+.goods__page {
+  padding: 5px;
+
+  // Текущая страница
+  &--current {
+    font-size: 30px;
+    font-weight: 900;
+  }
+
+  // Всего страниц
+  &--total {
+  }
+}
+
+// Список товаров
+.goods__list {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  gap: 30px;
+
+  @include df-laptop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,128 +1,206 @@
-<section class="main__catalog catalog">
+<section class="main__catalog catalog" data-da="main__content, 1, 767">
 
-  <div class="catalog__body">
-    <button class="catalog__btn catalog__btn--close button button--cross">
-      <svg class="catalog__icon button__icon" width="25" height="25">
-        <use xlink:href="#cross"></use>
-      </svg>
-    </button>
-
+  <header class="catalog__header">
     <h3 class="catalog__title">Каталог товаров</h3>
+    <button class="catalog__btn button button--burger" type="button">
+      <span class="button__icon"></span>
+    </button>
+  </header>
 
-    <ul class="catalog__list">
-      <li class="catalog__item accordeon__item">
-        <a class="catalog__link catalog__link--more accordeon__trigger">
-          Беговые дорожки
-          <ul class="catalog__list accordeon__content">
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink1">Sublink 1</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 2</a>
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li class="catalog__item accordeon__item">
-        <a class="catalog__link catalog__link--more accordeon__trigger">
-          Эллиптические тренажеры
-          <ul class="catalog__list accordeon__content">
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink1">Sublink 1</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 2</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 3</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 4</a>
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Велотренажеры</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Гребные тренажеры</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Вибромассажеры</a>
-      </li>
-      <li class="catalog__item accordeon__item">
-        <a class="catalog__link catalog__link--more accordeon__trigger">
-          Теннисные столы
-          <ul class="catalog__list accordeon__content">
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink1">Sublink 1</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 2</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 3</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 4</a>
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Баскетбол</a>
-      </li>
-      <li class="catalog__item accordeon__item">
-        <a class="catalog__link catalog__link--more accordeon__trigger">
-          Массажные кресла
-          <ul class="catalog__list accordeon__content">
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink1">Sublink 1</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 2</a>
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li class="catalog__item accordeon__item">
-        <a class="catalog__link catalog__link--more accordeon__trigger">
-          Массажные столы
-          <ul class="catalog__list accordeon__content">
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink1">Sublink 1</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 2</a>
-            </li>
-            <li class="catalog__item catalog__item--sub">
-              <a class="catalog__link" href="#sublink2">Sublink 3</a>
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Силовые тренажеры</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Батуты</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Детские городки</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Дачная мебель</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Уличные спортивные комплексы</a>
-      </li>
-      <li class="catalog__item">
-        <a class="catalog__link" href="#">Аксессуары</a>
-      </li>
-    </ul>
+  <ul class="catalog__list">
+    <li class="catalog__item catalog__item--more">
+      <a class="catalog__link" href="#">Беговые дорожки</a>
+      <aside class="catalog__submenu submenu-catalog">
+        <ul class="submenu-catalog__list">
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Всепогодный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Для помещений</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Профессиональный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Любительский</a>
+          </li>
+        </ul>
+        <article class="submenu-catalog__good daily-good">
+          <a class="daily-good__link" href="#">
+            <picture>
+              <source type="image/webp" srcset="img/goods/tennis-table-01.webp">
+              <img class="daily-good__img" src="img/goods/tennis-table-01.jpg" alt="Фото теннисного стол">
+              <h4 class="daily-good__title">Домашний теннисный стол Donic Indoor Roller 800 Green</h4>
+            </picuture>
+          </a>
+          <div class="daily-good__footer">
+            <button class="daily-good__btn button" type="button">В корзину</button>
+            <span class="daily-good__price">39 990 р.</span>
+          </div>
+        </article>
+      </aside>
+    </li>
+    <li class="catalog__item catalog__item--more">
+      <a class="catalog__link">Эллиптические тренажеры</a>
+      <aside class="catalog__submenu submenu-catalog">
+        <ul class="submenu-catalog__list">
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Всепогодный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Для помещений</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Профессиональный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Любительский</a>
+          </li>
+        </ul>
+        <article class="submenu-catalog__good daily-good">
+          <a class="daily-good__link" href="#">
+            <picture>
+              <source type="image/webp" srcset="img/goods/tennis-table-01.webp">
+              <img class="daily-good__img" src="img/goods/tennis-table-01.jpg" alt="Фото теннисного стол">
+              <h4 class="daily-good__title">Домашний теннисный стол Donic Indoor Roller 800 Green</h4>
+            </picuture>
+          </a>
+          <div class="daily-good__footer">
+            <button class="daily-good__btn button" type="button">В корзину</button>
+            <span class="daily-good__price">69 990 р.</span>
+          </div>
+        </article>
+      </aside>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Велотренажеры</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Гребные тренажеры</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Вибромассажеры</a>
+    </li>
+    <li class="catalog__item catalog__item--more">
+      <a class="catalog__link">Теннисные столы</a>
+      <aside class="catalog__submenu submenu-catalog">
+        <ul class="submenu-catalog__list">
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Всепогодный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Для помещений</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Профессиональный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Любительский</a>
+          </li>
+        </ul>
+        <article class="submenu-catalog__good daily-good">
+          <a class="daily-good__link" href="#">
+            <picture>
+              <source type="image/webp" srcset="img/goods/tennis-table-01.webp">
+              <img class="daily-good__img" src="img/goods/tennis-table-01.jpg" alt="Фото теннисного стол">
+              <h4 class="daily-good__title">Домашний теннисный стол Donic Indoor Roller 800 Green</h4>
+            </picuture>
+          </a>
+          <div class="daily-good__footer">
+            <button class="daily-good__btn button" type="button">В корзину</button>
+            <span class="daily-good__price">59 990 р.</span>
+          </div>
+        </article>
+      </aside>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Баскетбол</a>
+    </li>
+    <li class="catalog__item catalog__item--more">
+      <a class="catalog__link">Массажные кресла</a>
+      <aside class="catalog__submenu submenu-catalog">
+        <ul class="submenu-catalog__list">
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Всепогодный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Для помещений</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Профессиональный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Любительский</a>
+          </li>
+        </ul>
+        <article class="submenu-catalog__good daily-good">
+          <a class="daily-good__link" href="#">
+            <picture>
+              <source type="image/webp" srcset="img/goods/tennis-table-01.webp">
+              <img class="daily-good__img" src="img/goods/tennis-table-01.jpg" alt="Фото теннисного стол">
+              <h4 class="daily-good__title">Домашний теннисный стол Donic Indoor Roller 800 Green</h4>
+            </picuture>
+          </a>
+          <div class="daily-good__footer">
+            <button class="daily-good__btn button" type="button">В корзину</button>
+            <span class="daily-good__price">39 990 р.</span>
+          </div>
+        </article>
+      </aside>
+    </li>
+    <li class="catalog__item catalog__item--more">
+      <a class="catalog__link">Массажные столы</a>
+      <aside class="catalog__submenu submenu-catalog">
+        <ul class="submenu-catalog__list">
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Всепогодный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Для помещений</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Профессиональный</a>
+          </li>
+          <li class="submenu-catalog__item">
+            <a class="submenu-catalog__link" href="#">Любительский</a>
+          </li>
+        </ul>
+        <article class="submenu-catalog__good daily-good">
+          <a class="daily-good__link" href="#">
+            <picture>
+              <source type="image/webp" srcset="img/goods/tennis-table-01.webp">
+              <img class="daily-good__img" src="img/goods/tennis-table-01.jpg" alt="Фото теннисного стол">
+              <h4 class="daily-good__title">Домашний теннисный стол Donic Indoor Roller 800 Green</h4>
+            </picuture>
+          </a>
+          <div class="daily-good__footer">
+            <button class="daily-good__btn button" type="button">В корзину</button>
+            <span class="daily-good__price">29 990 р.</span>
+          </div>
+        </article>
+      </aside>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Силовые тренажеры</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Батуты</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Детские городки</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Дачная мебель</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Уличные спортивные комплексы</a>
+    </li>
+    <li class="catalog__item">
+      <a class="catalog__link" href="#">Аксессуары</a>
+    </li>
+  </ul>
 
-  </div>
+  <!-- </div> -->
 
 </section>
 

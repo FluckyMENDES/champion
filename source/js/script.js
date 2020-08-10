@@ -52,54 +52,79 @@
 })();
 
 // Меню каталога
+// (() => {
+
+//   const menu = document.querySelector(`.catalog`);
+//   const menuList = document.querySelector(`.catalog__body`);
+//   const openBtn = document.querySelector(`.search__btn--catalog`);
+//   const closeBtn = document.querySelector(`.catalog__btn--close`);
+//   const body = document.querySelector(`.body`);
+
+
+//   openBtn.addEventListener(`click`, () => {
+//     openMenu();
+//   });
+
+//   closeBtn.addEventListener(`click`, () => {
+//     closeMenu();
+//   });
+
+//   const onOutMenuClick = (evt) => {
+//     const target = evt.target;
+//     if (target !== menuList && !target.closest(`.catalog__body`)) {
+//       closeMenu();
+//     }
+//   };
+
+//   const onEscClick = (evt) => {
+//     if (evt.keyCode === 27) {
+//       closeMenu();
+//     }
+//   };
+
+//   const closeMenu = () => {
+//     menu.classList.remove(`catalog--active`);
+//     document.removeEventListener(`keydown`, onEscClick);
+//     body.classList.remove(`body--lock`);
+//     menu.removeEventListener(`click`, onOutMenuClick);
+//   };
+
+//   const openMenu = () => {
+//     menu.classList.add(`catalog--active`);
+//     document.addEventListener(`keydown`, onEscClick);
+//     body.classList.add(`body--lock`);
+
+//     setTimeout(() => {
+//       menu.addEventListener(`click`, onOutMenuClick);
+//     }, 100);
+//   };
+
+// })();
+
+// Меню каталога
 (() => {
 
-  const menu = document.querySelector(`.catalog`);
-  const menuList = document.querySelector(`.catalog__body`);
-  const openBtn = document.querySelector(`.search__btn--catalog`);
-  const closeBtn = document.querySelector(`.catalog__btn--close`);
-  const body = document.querySelector(`.body`);
+  const catalog = document.querySelector(`.catalog`);
+  const toggleBtn = catalog.querySelector(`.catalog__btn`);
+  const subLinks = catalog.querySelectorAll(`.catalog__item--more`);
 
-
-  openBtn.addEventListener(`click`, () => {
-    openMenu();
+  toggleBtn.addEventListener(`click`, () => {
+    catalog.classList.toggle(`catalog--active`);
+    toggleBtn.classList.toggle(`active`);
   });
 
-  closeBtn.addEventListener(`click`, () => {
-    closeMenu();
-  });
-
-  const onOutMenuClick = (evt) => {
-    const target = evt.target;
-    if (target !== menuList && !target.closest(`.catalog__body`)) {
-      closeMenu();
-    }
-  };
-
-  const onEscClick = (evt) => {
-    if (evt.keyCode === 27) {
-      closeMenu();
-    }
-  };
-
-  const closeMenu = () => {
-    menu.classList.remove(`catalog--active`);
-    document.removeEventListener(`keydown`, onEscClick);
-    body.classList.remove(`body--lock`);
-    menu.removeEventListener(`click`, onOutMenuClick);
-  };
-
-  const openMenu = () => {
-    menu.classList.add(`catalog--active`);
-    document.addEventListener(`keydown`, onEscClick);
-    body.classList.add(`body--lock`);
-
-    setTimeout(() => {
-      menu.addEventListener(`click`, onOutMenuClick);
-    }, 100);
-  };
+  // Добавить ховер ------------------------------------------------
+  for (let link of subLinks) {
+    link.addEventListener(`mouseenter`, () => {
+      link.querySelector(`.catalog__submenu`).classList.add(`submenu-catalog--active`);
+    });
+    link.addEventListener(`mouseleave`, () => {
+      link.querySelector(`.catalog__submenu`).classList.remove(`submenu-catalog--active`);
+    });
+  }
 
 })();
+
 
 (() => {
   const slider = Peppermint(document.getElementById(`peppermint`), {
@@ -138,5 +163,46 @@
       }
     });
   });
+
+})();
+
+// Секция "Поиск"
+(() => {
+
+  const dropdownBtn = document.querySelector(`.search__btn--where`);
+  const checkboxes = document.querySelectorAll(`.search__checkbox`);
+  const btnTextBackup = dropdownBtn.textContent;
+
+  dropdownBtn.addEventListener(`click`, () => {
+    dropdownBtn.classList.toggle(`search__btn--where--active`);
+  });
+
+  // Вешаем на все чекбоксы обрабочики изменения
+  for (let checkbox of checkboxes) {
+    checkbox.addEventListener(`change`, function () {
+      // Счетчик выбраных чекбоксов
+      let checkedBoxes = 0;
+
+      // Увеличиваем счетчик
+      for (checkbox of checkboxes) {
+        if (checkbox.checked) {
+          checkedBoxes++;
+        }
+      }
+
+      // Возвращаем изначальный текст на кнопке если не выбран не один чекбокс
+      if (!checkedBoxes) {
+        dropdownBtn.textContent = btnTextBackup;
+      // Иначе меняем текст кнопки
+      } else {
+        changeBtnText(checkedBoxes);
+      }
+    });
+  }
+
+  const changeBtnText = (checkboxesAmount) => {
+    dropdownBtn.textContent = `Выбрано:${checkboxesAmount}`;
+  };
+
 
 })();

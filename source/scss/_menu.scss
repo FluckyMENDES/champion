@@ -22,12 +22,12 @@
       background-color: rgba($color: $black, $alpha: 0.7);
       pointer-events: auto;
 
-      // Показываем меню
+      // Возвращаем меню
       & .menu__list {
         transform: translateX(0);
       }
 
-      // Показываем иконку
+      // Анимация кнопки "Закрыть"
       & .menu__icon {
         opacity: 1;
         transform: rotate(0);
@@ -72,6 +72,7 @@
   font-family: $secondary-font-family;
   font-size: 14px;
   line-height: 18px;
+  font-weight: 700;
   text-decoration: underline;
   border-radius: 20px;
 
