@@ -36,6 +36,7 @@
   align-items: center;
   background-color: transparent;
   fill: $main-color;
+  transition: 0.2s all ease;
 
   &:hover {
     fill: $secondary-color;
@@ -53,14 +54,14 @@
 
 // Блок с количеством страниц слайдера
 .goods__pages {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: 14px;
 }
 
 // Общая стилизация для цифр слайдера
 .goods__page {
-  padding: 5px;
+  padding: 3px;
 
   // Текущая страница
   &--current {

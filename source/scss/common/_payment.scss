@@ -1,0 +1,20 @@
+// Блок-список платежных систем
+.payment {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+// Элемент списка
+.payment__item {
+  &:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+.payment__img {
+  max-width: 36px;
+}

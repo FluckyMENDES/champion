@@ -20,7 +20,7 @@ $desktop: $desktop-width + $desktop-padding + $desktop-padding;
 // 1. Global
 // ---------
 
-$main-color: #14c0d4;
+$main-color: #009fb3;
 $secondary-color: #f68038;
 $success-color: #3adb76;
 $warning-color: #ffae00;
@@ -74,12 +74,12 @@ $input-background-color-hover: darken($border-color, 10%);
 $input-placeholder-color: $black;
 
 
-$checkbox-width: 33px;
-$checkbox-height: 33px;
-$checkbox-border: $input-border;
-$checkbox-background-color: $white;
-$checkbox-border-color-hover: $input-border-color-hover;
-$checkbox-background-color-hover: $input-background-color-hover;
+$checkbox-width: 15px;
+$checkbox-height: 15px;
+$checkbox-border: 2px solid $main-color;
+$checkbox-background-color: transparent;
+$checkbox-border-color-hover: darken($main-color, 10%);
+$checkbox-background-color-hover: darken($main-color, 10%);
 
 $radio-size: 50px;
 $radio-border-radius: 50%;

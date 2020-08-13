@@ -1,0 +1,15 @@
+.login__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__save-password + label {
+  font-size: 12px;
+}
+
+.login {
+  & .popup__content {
+    // max-width: 500px;
+  }
+}

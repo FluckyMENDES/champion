@@ -1,0 +1,71 @@
+.brands {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 2px dashed $light-gray;
+  border-bottom: 2px dashed $light-gray;
+}
+
+.brands__track {
+  margin: 0 auto;
+  max-width: 85%;
+
+  @media (max-width: 768px) {
+    max-width: 70%;
+  }
+  @media (max-width: 500px) {
+    // margin: 0;
+  }
+}
+
+.brands__list {
+  align-items: center;
+}
+
+.brands__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s all ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+.brands__logo {
+  max-width: 100px;
+}
+
+
+// Кнопка слайдера
+.brands__btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  fill: $main-color;
+  transition: 0.2s all ease;
+  font-size: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:hover {
+    fill: $secondary-color;
+  }
+
+  &--prev {
+    & svg {
+      transform: rotate(180deg);
+      left: 0;
+    }
+  }
+
+  &--next {
+    right: 0;
+  }
+}

@@ -1,0 +1,51 @@
+// Блок с телефонами футера
+.phone-footer {
+  display: flex;
+  align-items: center;
+
+  padding: 8px;
+}
+
+// Иконка "Телефонная трубка"
+.phone-footer__icon {
+  margin-right: auto;
+
+  @include df-laptop {
+    display: none;
+  }
+
+  @include df-tablet {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.phone-footer__list {
+}
+.phone-footer__item {
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+// Телефонная ссылка
+.phone-footer__link {
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  // line-height: 18px;
+  color: $dark-gray;
+  white-space: nowrap;
+
+  transition: 0.2s all ease;
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+
+  @include df-tablet {
+    font-size: 20px;
+  }
+}

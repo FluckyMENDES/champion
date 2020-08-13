@@ -16,7 +16,7 @@ const path = {
 		html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`], // html-файлы, кроме файлов с нижним подчеркиванием в начале
 		css: `${sourceFolder}/scss/style.scss`, // основной scss-файл
 		js: `${sourceFolder}/js/**/*.js`, // все js-файлы
-		img: `${sourceFolder}/img/**/*.{jpg,png,gif,ico,webp}`, // изображения
+		img: `${sourceFolder}/img/**/*.{jpg,png,gif,ico,webp,svg}`, // изображения
 		svg: `${sourceFolder}/img/sprite/*.svg`, // все векторные иконки (для спрайта)
 		fonts: `${sourceFolder}/fonts/*.ttf`, // шрифты только ttf-формата
     webFonts: `${sourceFolder}/fonts/*.{woff,woff2}`, // веб-шрифты
@@ -27,7 +27,7 @@ const path = {
 		html: `${sourceFolder}/**/*.html`, // за всеми html-файлами
 		css: `${sourceFolder}/scss/**/*.scss`, // за всеми scss-файлами
 		js: `${sourceFolder}/js/**/*.js`, // за всеми js-файлами
-		img: `${sourceFolder}/img/**/*.{jpg,png,gif,ico,webp}`, // за конкретными форматами в папке изображений
+		img: `${sourceFolder}/img/**/*.{jpg,png,gif,ico,webp,svg}`, // за конкретными форматами в папке изображений
     svg: `${sourceFolder}/img/sprite/*.svg`,
     libs: `${sourceFolder}/img/sprite/**/*.{css,js}`, // за файлами сторонних библиотек
 		// fonts: `${sourceFolder}/fonts/*.ttf`
@@ -147,7 +147,13 @@ function images() {
 		imagemin.svgo({
 			plugins: [
 				{removeViewBox: true},
-				{cleanupIDs: false}
+        {cleanupIDs: false},
+        {cleanupListOfValues: {
+          floatPrecision: 2,
+          leadingZero: true,
+          defaultPx: true,
+          convertToPx: true
+        }}
 			]
 		})
 	]))

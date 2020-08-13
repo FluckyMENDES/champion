@@ -4,13 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="preload" href="fonts/unisansheavycaps.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
-	<link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
-	<link rel="preload" href="fonts/Roboto-Black.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
-	<link rel="preload" href="fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+	<link rel="preload" href="fonts/unisansheavycaps.woff2" as="font" type="font/woff2">
+	<link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2">
+	<link rel="preload" href="fonts/Roboto-Black.woff2" as="font" type="font/woff2">
+	<link rel="preload" href="fonts/Play-Bold.woff2" as="font" type="font/woff2">
 
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/peppermint.required.css">
+  <link rel="stylesheet" href="css/glide.core.min.css">
 	<title>Champion | Спортивный магазин</title>
 	<meta name="description" content="ТЕКСТОВОЕ ОПИСАНИЕ">
 </head>
@@ -20,13 +21,73 @@
 	<div style="display:none;">
         <include src="build/img/sprite.svg"></include>
 	</div>
-  <include src="source/html/index/_header.html"></include>
-  <include src="source/html/index/_subheader.html"></include>
+  <include src="source/html/_header.html"></include>
+  <include src="source/html/_subheader.html"></include>
   <include src="source/html/index/_main.html"></include>
+  <include src="source/html/index/_brands.html"></include>
+  <include src="source/html/index/_about.html"></include>
+  <include src="source/html/_subfooter.html"></include>
+  <include src="source/html/_footer.html"></include>
 
+  <section class="popup registration" id="registration">
+		<div class="popup__body">
+			<div class="popup__content">
+				<h3 class="popup__title">Регистрация</h3>
+        <form action="https://echo.htmlacademy.ru" method="POST">
+          <div class="popup__row">
+            <input class="registration__name" name="registration__name" id="registration__name" type="text" placeholder=" " required>
+            <label for="registration__name">Имя</label>
+          </div>
+          <div class="popup__row">
+            <input class="registration__number" name="registration__number" id="registration__number" type="number" placeholder=" " required>
+            <label for="registration__number">Номер телефона</label>
+          </div>
+          <div class="popup__row">
+            <input class="registration__password" name="registration__password" id="registration__password" type="password" placeholder=" " required>
+            <label for="registration__password">Придумайте пароль</label>
+          </div>
+          <div class="popup__row">
+            <input class="registration__re-password" name="registration__re-password" id="registration__re-password" type="password" placeholder=" " required>
+            <label for="registration__re-password">Повторите пароль</label>
+          </div>
+          <div class="popup__row registration__footer">
+            <input type="checkbox" class="registration__agree" name="registration__agree" id="registration__agree">
+            <label for="registration__agree">Я принимаю условия <a href="#">пользовательского соглашения</a></label>
+            <button class="popup__button button" type="submit">Зарегистрироваться</button>
+          </div>
+				</form>
+				<button class="popup__button popup__button--close popup-close button" type="button">Закрыть<span> модальное окно</span></button>
+			</div>
+		</div>
+  </section>
+
+  <section class="popup login" id="login">
+		<div class="popup__body">
+			<div class="popup__content">
+				<h3 class="popup__title">Авторизация</h3>
+        <form action="https://echo.htmlacademy.ru" method="POST">
+          <div class="popup__row">
+            <input class="login__number" name="login__number" id="login__number" type="number" placeholder=" " required>
+            <label for="login__number">Номер телефона</label>
+          </div>
+          <div class="popup__row">
+            <input class="login__password" name="login__password" id="login__password" type="password" placeholder=" " required>
+            <label for="login__password">Введите пароль</label>
+          </div>
+          <div class="popup__row login__footer">
+            <input type="checkbox" class="login__save-password" name="login__save-password" id="login__save-password">
+            <label for="login__save-password">Запомнить меня</label>
+            <button class="popup__button button" type="submit">Войти</button>
+          </div>
+				</form>
+				<button class="popup__button popup__button--close popup-close button" type="button">Закрыть<span> модальное окно</span></button>
+			</div>
+		</div>
+	</section>
 
   <script src="js/dynamic-adapt.js"></script>
   <script src="js/peppermint.min.js"></script>
+  <script src="js/glide.min.js"></script>
   <script src="js/script.js"></script>
 
 </body>

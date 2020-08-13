@@ -1,0 +1,144 @@
+.footer {
+}
+
+.footer__container {
+}
+
+// Строки футера
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+
+  // Втроая строка
+  &:last-child {
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-top: 1px solid $border-color;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+  }
+}
+
+// Колонки футера
+.footer__column {
+  max-width: 50%;
+
+  @include df-laptop {
+    max-width: none;
+  }
+
+  // Вторая колонка футера "ВК-виджет"
+  &:nth-child(2) {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+
+    @include df-laptop {
+      // max-width: 50%;
+    }
+
+    @media (max-width: 600px) {
+      // justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+// Подстрока футера
+.footer__subrow {
+  display: flex;
+
+  @include df-tablet {
+    flex-direction: column;
+  }
+}
+
+// Подколонка футера
+.footer__subcolumn {
+  // Первая подколонка (Логотип и блок с телефонами)
+  &:first-child {
+    max-width: 33%;
+    margin-right: 30px;
+
+    @include df-tablet {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+// Контейнер логотипа
+.footer__logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100px;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  background-color: #0099ad;
+
+  transition: 0.2s all ease;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color: #0099ad, $amount: 5%);
+  }
+}
+
+// Иконка логотипа
+.footer__logo {
+  fill: $white;
+}
+
+// Блок с телефонами
+.footer__phone {
+  margin-bottom: 40px;
+}
+
+// Блок доставки
+.footer__delivery {
+  margin-bottom: 40px;
+}
+
+// Блок платежные системы
+.footer__payment {
+  margin-bottom: 20px;
+}
+
+// Копирайт
+.footer__copyright {
+  // margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 400;
+  color: $medium-gray;
+
+  @include df-tablet {
+    font-size: 16px;
+  }
+}
+
+// Блок социальных иконок
+.footer__social {
+  // margin-bottom: 20px;
+}
+
+// Изображения-заглушки "ВК-виджета"
+.footer__blank {
+  margin-left: auto;
+  margin-bottom: 20px;
+
+  @media (max-width: 600px) {
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,73 @@
+// Блок-список социальных иконок
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// Элементы списка
+.socials__item {
+  &:not(:last-child) {
+    margin-right: 15px;
+
+    @media (max-width: 600px) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+// Ссылки на соц. сети
+.socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  transition: 0.2s all ease;
+
+  @include df-tablet {
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+  }
+
+  // vk
+  &--vk {
+    background-color: #577ca2;
+
+
+  }
+
+  // Facebook
+  &--fb {
+    background-color: #3b5998;
+  }
+
+  // Instagram
+  &--ig {
+    background-color: #ce312d;
+  }
+
+  // Odnoklasniki
+  &--ok {
+    background-color: #e47e25;
+  }
+}
+
+// Иконки социальных сетей
+.socials__icon {
+  fill: $white;
+
+  @include df-tablet {
+    width: 27px;
+    height: 27px;
+  }
+}

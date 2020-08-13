@@ -6,7 +6,7 @@
   const menu = document.querySelector(`.menu`);
   const menuList = document.querySelector(`.menu__list`);
   const burger = document.querySelector(`.header__burger`);
-  const closeBtn = document.querySelector(`.menu__btn--close`);
+  // const closeBtn = document.querySelector(`.menu__btn--close`);
   const body = document.querySelector(`.body`);
 
 
@@ -14,9 +14,9 @@
     openMenu();
   });
 
-  closeBtn.addEventListener(`click`, () => {
-    closeMenu();
-  });
+  // closeBtn.addEventListener(`click`, () => {
+  //   closeMenu();
+  // });
 
   const onOutMenuClick = (evt) => {
     const target = evt.target;
@@ -35,71 +35,63 @@
     menu.classList.remove(`menu--active`);
     document.removeEventListener(`keydown`, onEscClick);
     document.removeEventListener(`click`, onOutMenuClick);
-    body.classList.remove(`body--lock`);
+    // body.classList.remove(`body--lock`);
+    bodyUnlock();
   };
 
   const openMenu = () => {
     menu.classList.add(`menu--active`);
     document.addEventListener(`keydown`, onEscClick);
-    body.classList.add(`body--lock`);
+    // body.classList.add(`body--lock`);
+    bodyLock();
 
     setTimeout(() => {
       menu.addEventListener(`click`, onOutMenuClick);
     }, 100);
 
   };
+  const timeout = 800;
+
+  const lockPadding = document.querySelectorAll(`.lock-padding`);
+
+  // let unlock = true;
+
+  function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector(`body`).offsetWidth + `px`;
+
+    if (lockPadding.length > 0) {
+      lockPadding.forEach((item) => {
+        item.style.paddingRight = lockPaddingValue;
+      });
+    }
+
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add(`body--lock`);
+
+    lockScroll();
+  }
+
+  function bodyUnlock() {
+    setTimeout(() => {
+      if (lockPadding.length > 0) {
+        lockPadding.forEach((item) => {
+          item.style.paddingRight = `0px`;
+        });
+      }
+
+      body.style.paddingRight = `0px`;
+      body.classList.remove(`body--lock`);
+    }, timeout);
+  }
+
+  function lockScroll() {
+    // unlock = false;
+    setTimeout(() => {
+      // unlock = true;
+    }, timeout);
+  }
 
 })();
-
-// Меню каталога
-// (() => {
-
-//   const menu = document.querySelector(`.catalog`);
-//   const menuList = document.querySelector(`.catalog__body`);
-//   const openBtn = document.querySelector(`.search__btn--catalog`);
-//   const closeBtn = document.querySelector(`.catalog__btn--close`);
-//   const body = document.querySelector(`.body`);
-
-
-//   openBtn.addEventListener(`click`, () => {
-//     openMenu();
-//   });
-
-//   closeBtn.addEventListener(`click`, () => {
-//     closeMenu();
-//   });
-
-//   const onOutMenuClick = (evt) => {
-//     const target = evt.target;
-//     if (target !== menuList && !target.closest(`.catalog__body`)) {
-//       closeMenu();
-//     }
-//   };
-
-//   const onEscClick = (evt) => {
-//     if (evt.keyCode === 27) {
-//       closeMenu();
-//     }
-//   };
-
-//   const closeMenu = () => {
-//     menu.classList.remove(`catalog--active`);
-//     document.removeEventListener(`keydown`, onEscClick);
-//     body.classList.remove(`body--lock`);
-//     menu.removeEventListener(`click`, onOutMenuClick);
-//   };
-
-//   const openMenu = () => {
-//     menu.classList.add(`catalog--active`);
-//     document.addEventListener(`keydown`, onEscClick);
-//     body.classList.add(`body--lock`);
-
-//     setTimeout(() => {
-//       menu.addEventListener(`click`, onOutMenuClick);
-//     }, 100);
-//   };
-
-// })();
 
 // Меню каталога
 (() => {
@@ -126,8 +118,9 @@
 })();
 
 
+// Слайдер на главной
 (() => {
-  const slider = Peppermint(document.getElementById(`peppermint`), {
+  const slider = Peppermint(document.querySelector(`.slider__container`), {
     speed: 1000,
     touchSpeed: 1000,
     slideshow: true,
@@ -140,6 +133,35 @@
 
   // Пересчитываем ширину слайдера
   slider.recalcWidth();
+})();
+
+// Слайдер с брендами
+(() => {
+  new Glide(`.glide`, {
+    // carousel - листается по кругу, slider - возвращается к первому слайду, пролистывая предыдущие
+    type: `carousel`,
+    // С какого слайда начинать
+    startAt: 0,
+    // Сколько слайдов показать одновременно
+    perView: 6,
+    // Интервал автопролистывания
+    autoplay: 4000,
+    // Остановка автопролистывания при ховере
+    hoverpause: true,
+    // Адаптив
+    breakpoints: {
+      1199: {
+        perView: 4.6
+      },
+      767: {
+        perView: 2.8
+      },
+      500: {
+        perView: 1.5
+      },
+    }
+    // Инициализация слайдера
+  }).mount();
 })();
 
 // Акордеон в меню католога
@@ -204,5 +226,121 @@
     dropdownBtn.textContent = `Выбрано:${checkboxesAmount}`;
   };
 
+})();
+
+// Модальные окна
+(() => {
+
+  const popupLinks = document.querySelectorAll(`.popup-link`);
+  const body = document.querySelector(`body`);
+  const lockPadding = document.querySelectorAll(`.lock-padding`);
+
+  const ESC_BTN = 27;
+  let unlock = true;
+
+  // Значение должно соответсвовать продолжительности анимации попапа
+  const timeout = 800;
+
+  if (popupLinks.length > 0) {
+    popupLinks.forEach((link) => {
+      link.addEventListener(`click`, (evt) => {
+        evt.preventDefault();
+        const popupName = link.getAttribute(`href`);
+        const currentPopup = document.querySelector(popupName);
+        popupOpen(currentPopup);
+      });
+    });
+  }
+
+  const popupCloseBtn = document.querySelectorAll(`.popup-close`);
+  if (popupCloseBtn.length > 0) {
+    popupCloseBtn.forEach((button) => {
+      button.addEventListener(`click`, (evt) => {
+        evt.preventDefault();
+        popupClose(button.closest(`.popup`));
+      });
+    });
+  }
+
+  function popupOpen(currentPopup) {
+    if (currentPopup && unlock) {
+      const popupActive = document.querySelector(`.popup--opened`);
+      if (popupActive) {
+        popupClose(popupActive, false);
+      } else {
+        bodyLock();
+      }
+      showPopup(currentPopup);
+      currentPopup.addEventListener(`click`, (evt) => {
+        if (!evt.target.closest(`.popup__content`)) {
+          popupClose(evt.target.closest(`.popup`));
+        }
+      });
+    }
+  }
+
+  function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+      hidePopup(popupActive);
+
+      if (doUnlock) {
+        bodyUnlock();
+      }
+    }
+  }
+
+  function onEscCloseModal(evt) {
+    if (evt.keyCode === ESC_BTN) {
+      const popupActive = document.querySelector(`.popup--opened`);
+      popupClose(popupActive);
+    }
+  }
+
+  function showPopup(currentPopup) {
+    currentPopup.classList.add(`popup--opened`);
+    document.addEventListener(`keydown`, onEscCloseModal);
+  }
+
+  function hidePopup(popupActive) {
+    popupActive.classList.remove(`popup--opened`);
+    document.removeEventListener(`keydown`, onEscCloseModal);
+  }
+
+
+  function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector(`body`).offsetWidth + `px`;
+
+    if (lockPadding.length > 0) {
+      lockPadding.forEach((item) => {
+        item.style.paddingRight = lockPaddingValue;
+      });
+    }
+
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add(`body--lock`);
+
+    lockScroll();
+  }
+
+  function bodyUnlock() {
+    setTimeout(() => {
+      if (lockPadding.length > 0) {
+        lockPadding.forEach((item) => {
+          console.log(item);
+          item.style.paddingRight = `0px`;
+        });
+      }
+
+      body.style.paddingRight = `0px`;
+      body.classList.remove(`body--lock`);
+    }, timeout);
+  }
+
+  function lockScroll() {
+    unlock = false;
+    setTimeout(() => {
+      unlock = true;
+    }, timeout);
+  }
 
 })();

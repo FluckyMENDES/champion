@@ -1,0 +1,50 @@
+// Блок доставки
+.delivery {
+  text-align: center;
+  @include df-tablet {
+    text-align: left;
+  }
+}
+
+// Заголовок блока
+.delivery__title {
+  display: block;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.25px;
+  color: $medium-gray;
+  text-transform: uppercase;
+}
+
+// Список транспортных компаний
+.delivery__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// Элементы списка
+.delivery__item {
+  padding: 5px 12px;
+
+  @include df-tablet {
+    padding: 5px;
+  }
+}
+
+.delivery__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delivery__logo {
+  max-width: 155px;
+
+  transition: 0.2s all ease;
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+  }
+}

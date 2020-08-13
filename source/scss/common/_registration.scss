@@ -1,0 +1,10 @@
+.registration__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registration__agree + label {
+  font-size: 12px;
+}
+

@@ -1,6 +1,6 @@
 // Карточка отзыва
 .review {
-  padding-bottom: 35px;
+  // padding-bottom: 35px;
 
   &:hover .review__name,
   &:hover .review__date {
@@ -18,7 +18,7 @@
 .review__header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
 }
 
 // Имя и Фамилия
@@ -55,7 +55,7 @@
   position: relative;
 
   margin: 0;
-  padding: 15px 12px 20px 37px;
+  padding: 15px 12px 15px 37px;
 
   font-size: 12px;
   line-height: 18px;

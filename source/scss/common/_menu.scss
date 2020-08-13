@@ -38,10 +38,17 @@
 
 // Основное меню
 .menu__list {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  transition: 1s transform ease;
   position: relative;
+
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 80%;
+
+  transition: 1s transform ease;
 
   // Выезжающее меню при меньшем чем 768 разрешении
   @include df-tablet {
@@ -67,13 +74,15 @@
 // Ссылка меню
 .menu__link {
   display: inline-block;
-  padding: 8px 23px 7px;
+  padding: 5px 23px 5px;
+
   color: $white;
   font-family: $secondary-font-family;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 14px;
   font-weight: 700;
   text-decoration: underline;
+
   border-radius: 20px;
 
   &:hover,
@@ -88,16 +97,16 @@
 }
 
 // Кнопка "Закрыть меню"
-.menu__btn--close {
-  position: absolute;
-  right: -50px;
+// .menu__btn--close {
+//   position: absolute;
+//   right: -50px;
 
-  display: none;
+//   display: none;
 
-  @include df-tablet {
-    display: block;
-  }
-}
+//   @include df-tablet {
+//     display: block;
+//   }
+// }
 
 // Иконка "Крестик"
 // .menu__icon {
