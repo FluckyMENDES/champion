@@ -6,7 +6,7 @@ input[type="number"] {
 	display: block;
   width: 100%;
   height: auto;
-	padding: 20px 23px 12px 30px ;
+	padding: 20px 23px 12px 20px ;
 	border: $input-border;
 	background-color: transparent;
 	color: $black;
@@ -128,8 +128,8 @@ input[type="checkbox"] + label {
       position: absolute;
       top: 50%;
       left: -21px;
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       opacity: 0;
       background-color: $main-color;
       transform: translateY(-50%);

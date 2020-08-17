@@ -1,10 +1,12 @@
 .registration__footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
 .registration__agree + label {
   font-size: 12px;
+  margin-bottom: 10px;
 }
 

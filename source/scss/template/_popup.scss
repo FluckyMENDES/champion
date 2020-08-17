@@ -27,7 +27,7 @@
   & input[type="number"] + label {
     position: absolute;
     top: 20%;
-    left: 32px;
+    left: 24px;
     transform: translateY(-50%);
     transition: 0.3s all ease;
     font-size: 12px;
@@ -37,7 +37,7 @@
   & input:placeholder-shown[type="text"] + label,
   & input:placeholder-shown[type="password"] + label,
   & input:placeholder-shown[type="number"] + label {
-    top: 60%;
+    top: 55%;
     font-size: 18px;
     color: $medium-gray;
   }
@@ -65,7 +65,7 @@
 
 
     @include tablet {
-        min-width: 660px;
+        min-width: 450px;
         padding: 50px 40px 20px;
     }
 }
@@ -78,12 +78,12 @@
 
 // Кнопка закрытия модального окна
 .popup__button {
-  padding: 15px 12px;
+  padding: 10px 15px;
   background-color: $main-color;
   color: $white;
 
   &--close {
-    width: 47%;
+    // width: 47%;
     background-color: $secondary-color;
 
     // Прячем полный текст кнопки
@@ -99,8 +99,8 @@
     // Трансформируем кнопку от планшета
     @include tablet {
         position: absolute;
-        right: -92px;
-        top: 62px;
+        right: -60px;
+        top: 50px;
         font-size: 0;
         background-color: transparent;
         box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);

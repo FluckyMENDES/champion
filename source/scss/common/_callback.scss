@@ -1,0 +1,11 @@
+.callback__text {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.callback__footer {
+  @include df-tablet {
+    display: flex;
+    justify-content: center;
+  }
+}

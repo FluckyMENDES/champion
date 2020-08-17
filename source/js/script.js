@@ -119,25 +119,53 @@
 
 
 // Слайдер на главной
-(() => {
-  const slider = Peppermint(document.querySelector(`.slider__container`), {
-    speed: 1000,
-    touchSpeed: 1000,
-    slideshow: true,
-    slideshowInterval: 4000,
-    stopSlideshowAfterInteraction: true,
-    // disableIfOneSlide: true,
-    dots: true,
-    dotsContainer: document.querySelector(`.slider__dots`),
-  });
+// (() => {
+//   const slider = Peppermint(document.querySelector(`.slider__container`), {
+//     speed: 1000,
+//     touchSpeed: 1000,
+//     slideshow: true,
+//     slideshowInterval: 4000,
+//     stopSlideshowAfterInteraction: true,
+//     // disableIfOneSlide: true,
+//     dots: true,
+//     dotsContainer: document.querySelector(`.slider__dots`),
+//   });
 
-  // Пересчитываем ширину слайдера
-  slider.recalcWidth();
+//   // Пересчитываем ширину слайдера
+//   slider.recalcWidth();
+// })();
+
+(() => {
+  new Glide(`.slider`, {
+    // carousel - листается по кругу, slider - возвращается к первому слайду, пролистывая предыдущие
+    type: `slider`,
+    // С какого слайда начинать
+    startAt: 0,
+    // Сколько слайдов показать одновременно
+    perView: 1,
+    // Интервал автопролистывания
+    autoplay: 4000,
+    // Остановка автопролистывания при ховере
+    hoverpause: true,
+    // Адаптив
+    breakpoints: {
+      // 1199: {
+      //   perView: 4.6
+      // },
+      // 767: {
+      //   perView: 2.8
+      // },
+      // 500: {
+      //   perView: 1.5
+      // },
+    }
+    // Инициализация слайдера
+  }).mount();
 })();
 
 // Слайдер с брендами
 (() => {
-  new Glide(`.glide`, {
+  new Glide(`.brands__slider`, {
     // carousel - листается по кругу, slider - возвращается к первому слайду, пролистывая предыдущие
     type: `carousel`,
     // С какого слайда начинать
@@ -162,6 +190,20 @@
     }
     // Инициализация слайдера
   }).mount();
+})();
+
+// Изменение изображений точек у мейн-слайдера
+(() => {
+
+  const sliderImages = document.querySelectorAll(`.slider__img`);
+  const sliderBullets = document.querySelectorAll(`.slider__bullet`);
+
+  sliderBullets.forEach((bullet, index) => {
+    let sliderImageSrc = sliderImages[index].getAttribute(`src`);
+    sliderBullets[index].style.backgroundImage = `url('${sliderImageSrc}')`;
+    sliderBullets[index].textContent = ++index;
+  });
+
 })();
 
 // Акордеон в меню католога
@@ -235,7 +277,6 @@
   const body = document.querySelector(`body`);
   const lockPadding = document.querySelectorAll(`.lock-padding`);
 
-  const ESC_BTN = 27;
   let unlock = true;
 
   // Значение должно соответсвовать продолжительности анимации попапа
@@ -290,7 +331,7 @@
   }
 
   function onEscCloseModal(evt) {
-    if (evt.keyCode === ESC_BTN) {
+    if (evt.key === `Escape`) {
       const popupActive = document.querySelector(`.popup--opened`);
       popupClose(popupActive);
     }
@@ -298,12 +339,12 @@
 
   function showPopup(currentPopup) {
     currentPopup.classList.add(`popup--opened`);
-    document.addEventListener(`keydown`, onEscCloseModal);
+    document.addEventListener(`keyup`, onEscCloseModal);
   }
 
   function hidePopup(popupActive) {
     popupActive.classList.remove(`popup--opened`);
-    document.removeEventListener(`keydown`, onEscCloseModal);
+    document.removeEventListener(`keyup`, onEscCloseModal);
   }
 
 
@@ -342,5 +383,21 @@
       unlock = true;
     }, timeout);
   }
+
+})();
+
+
+(() => {
+
+  let slider = document.querySelector(`.input-range__dounle`);
+
+  noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 100
+    }
+  });
 
 })();
