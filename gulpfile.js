@@ -11,6 +11,7 @@ const path = {
 		js: `${buildFolder}/js/`, // js-файлы
 		img: `${buildFolder}/img/`, // изображения
     fonts: `${buildFolder}/fonts`, // шрифты
+    libs: `${buildFolder}/libs`, // сторонние библиотеки
   	},
 	source: { // Папка с исходниками
 		html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`], // html-файлы, кроме файлов с нижним подчеркиванием в начале
@@ -20,8 +21,7 @@ const path = {
 		svg: `${sourceFolder}/img/sprite/*.svg`, // все векторные иконки (для спрайта)
 		fonts: `${sourceFolder}/fonts/*.ttf`, // шрифты только ttf-формата
     webFonts: `${sourceFolder}/fonts/*.{woff,woff2}`, // веб-шрифты
-    libsCSS: `${sourceFolder}/libs/**/*.css`, // сторонние библиотеки CSS
-    libsJS: `${sourceFolder}/libs/**/*.js`, // сторонние библиотеки JS
+    libs: `${sourceFolder}/libs/**/*.{css,scss,js}`, // файлы сторонних библиотек
 	},
 	watch: { // За изменением каких файлов следим
 		html: `${sourceFolder}/**/*.html`, // за всеми html-файлами
@@ -29,7 +29,7 @@ const path = {
 		js: `${sourceFolder}/js/**/*.js`, // за всеми js-файлами
 		img: `${sourceFolder}/img/**/*.{jpg,png,gif,ico,webp,svg}`, // за конкретными форматами в папке изображений
     svg: `${sourceFolder}/img/sprite/*.svg`,
-    libs: `${sourceFolder}/img/sprite/**/*.{css,js}`, // за файлами сторонних библиотек
+    libs: `${sourceFolder}/libs/**/*.{css,js}`, // за файлами сторонних библиотек
 		// fonts: `${sourceFolder}/fonts/*.ttf`
 	}
 }
@@ -206,20 +206,21 @@ function copyFonts() {
 }
 
 function copyLibs() {
-	// Берем файлы-css
-  gulp.src(path.source.libsCSS)
+	// Берем файлы-библиотек
+  return gulp.src(path.source.libs)
   // Убираем лишнюю структуру папок
-  .pipe(flatten())
+  // .pipe(flatten())
 	// кладем в папку сборки
-  .pipe(gulp.dest(path.build.css));
-	// Берем файлы-js
-  return gulp.src(path.source.libsJS)
-  // Убираем лишнюю структуру папок
-  .pipe(flatten())
-	// кладем в папку сборки
-	.pipe(gulp.dest(path.build.js))
+  .pipe(gulp.dest(path.build.libs))
   // обновляем страницу
-	.pipe(browserSync.stream());
+  .pipe(browserSync.stream());
+	// Берем файлы-js
+  // return gulp.src(path.source.libsJS)
+  // // Убираем лишнюю структуру папок
+  // // .pipe(flatten())
+	// // кладем в папку сборки
+	// .pipe(gulp.dest(path.build.js))
+
 }
 
 // Очистка папки сборки

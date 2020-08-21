@@ -1,6 +1,208 @@
-<section class="filter">
-  <form action="" method="POST">
-    <h4>Фильтр товаров</h4>
-    <div id="input-range--double"></div>
+<section class="filter" data-da="main__content, 1, 767">
+  <h4 class="filter__title">Фильтр товаров</h4>
+  <form class="filter__form" action="https://echo.htmlacademy.ru" method="POST">
+    <fieldset class="filter__fieldset filter__fieldset--price">
+      <div class="filter__row">
+        <p class="filter__label">Цена (руб.)</p>
+        <div class="filter__range" id="double-range"></div>
+      </div>
+      <div class="filter__row filter__row--price-inputs">
+        <div class="filter__cell">
+          <label for="filter__price--min">от</label>
+          <input class="filter__input--price" type="number" name="filter__price--min" id="filter__price--min" step="1">
+        </div>
+        <div class="filter__cell">
+          <label for="filter__price--min">до</label>
+          <input class="filter__input--price" type="number" name="filter__price--max" id="filter__price--max" step="1">
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="filter__fieldset compare">
+      <h5 class="compare__subtitle">Товары для сравнения</h5>
+      <ul class="compare__list">
+        <li class="compare__item">
+          <a class="compare__link" href="#">NordicTrack C100</a>
+          <button class="compare__btn compare__btn--delete button">
+            Удалить из списка
+            <svg class="compare__icon" width="8" height="8">
+              <use xlink:href="#cross"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="compare__item">
+          <a class="compare__link" href="#">Clear Fit Luxury LT.20</a>
+          <button class="compare__btn compare__btn--delete button">
+            Удалить из списка
+            <svg class="compare__icon" width="8" height="8">
+              <use xlink:href="#cross"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="compare__item">
+          <a class="compare__link" href="#">Ammity ATM 720 TFT+</a>
+          <button class="compare__btn compare__btn--delete button">
+            Удалить из списка
+            <svg class="compare__icon" width="8" height="8">
+              <use xlink:href="#cross"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <div class="compare__row">
+        <button type="button" class="compare__btn compare__btn--compare button">Сравнить</button>
+        <button type="button" class="compare__btn compare__btn--clear-all button">Очистить список сравнения</button>
+      </div>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__fieldset--manufacturer">
+      <button class="filter__button--dropdown filter__button--dropdown--active button" type="button">
+        Показать/скрыть раздел фильтра
+        <svg class="filter__dropdown-icon" width="10" height="10">
+          <use xlink:href="#double-arrow"></use>
+        </svg>
+      </button>
+      <h5 class="filter__subtitle">Производитель:</h5>
+      <ul class="filter__list">
+        <li class="filter__item">
+          <input type="checkbox" name="manufacturer" id="manufacturer__clear-fit" value="clear-fit">
+          <label for="manufacturer__clear-fit">Clear-fit</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="manufacturer" id="manufacturer__diadora" value="diadora">
+          <label for="manufacturer__diadora">Diadora</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="manufacturer" id="manufacturer__hasttings" value="hasttings">
+          <label for="manufacturer__hasttings">Hasttings</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="manufacturer" id="manufacturer__carbon-fitness" value="carbon-fitness">
+          <label for="manufacturer__carbon-fitness">Carbon-fitness</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="manufacturer" id="manufacturer__nordic-track" value="nordic-track">
+          <label for="manufacturer__nordic-track">Nordic Track</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__fieldset--power">
+      <button class="filter__button--dropdown filter__button--dropdown--active button" type="button">
+        Показать/скрыть раздел фильтра
+        <svg class="filter__dropdown-icon" width="10" height="10">
+          <use xlink:href="#double-arrow"></use>
+        </svg>
+      </button>      <h5 class="filter__subtitle">Мощность двигателя:</h5>
+      <ul class="filter__list">
+        <li class="filter__item">
+          <input type="checkbox" name="power" id="power__12" value="12">
+          <label for="power__12">12</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="power" id="power__14" value="14">
+          <label for="power__14">14</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="power" id="power__16" value="16">
+          <label for="power__16">16</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="power" id="power__18" value="18">
+          <label for="power__18">18</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="power" id="power__20" value="20">
+          <label for="power__20">20</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__fieldset--size">
+      <button class="filter__button--dropdown button" type="button">
+        Показать/скрыть раздел фильтра
+        <svg class="filter__dropdown-icon" width="10" height="10">
+          <use xlink:href="#double-arrow"></use>
+        </svg>
+      </button>
+      <h5 class="filter__subtitle">Размер бегового полотна:</h5>
+      <ul class="filter__list">
+        <li class="filter__item">
+          <input type="checkbox" name="size" id="size__70" value="70">
+          <label for="size__70">70 см</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="size" id="size__90" value="90">
+          <label for="size__90">90 см</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__fieldset--weight">
+      <button class="filter__button--dropdown button" type="button">
+        Показать/скрыть раздел фильтра
+        <svg class="filter__dropdown-icon" width="10" height="10">
+          <use xlink:href="#double-arrow"></use>
+        </svg>
+      </button>
+      <h5 class="filter__subtitle">Вес пользователя (макс):</h5>
+      <ul class="filter__list">
+        <li class="filter__item">
+          <input type="checkbox" name="weight" id="weight__100" value="100">
+          <label for="weight__100">100 кг</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="weight" id="weight__120" value="120">
+          <label for="weight__120">120 кг</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="weight" id="weight__150" value="150">
+          <label for="weight__150">150 кг</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="weight" id="weight__200" value="200">
+          <label for="weight__200">200 кг</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__fieldset--speed">
+      <button class="filter__button--dropdown button" type="button">
+        Показать/скрыть раздел фильтра
+        <svg class="filter__dropdown-icon" width="10" height="10">
+          <use xlink:href="#double-arrow"></use>
+        </svg>
+      </button>
+      <h5 class="filter__subtitle">Вес пользователя (макс):</h5>
+      <ul class="filter__list">
+        <li class="filter__item">
+          <input type="checkbox" name="speed" id="speed__10" value="10">
+          <label for="speed__10">10 км/ч</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="speed" id="speed__15" value="15">
+          <label for="speed__15">15 км/ч</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="speed" id="speed__20" value="20">
+          <label for="speed__20">20 км/ч</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter__fieldset filter__fieldset--angle">
+      <h5 class="filter__subtitle">Угол наклона:</h5>
+      <ul class="filter__list">
+        <li class="filter__item">
+          <input type="checkbox" name="angle" id="angle__no" value="no">
+          <label for="angle__no">Нет регулировки</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="angle" id="angle__mechanical" value="mechanical">
+          <label for="angle__mechanical">Механическая</label>
+        </li>
+        <li class="filter__item">
+          <input type="checkbox" name="angle" id="angle__electrical" value="electrical">
+          <label for="angle__electrical">Электронная</label>
+        </li>
+      </ul>
+    </fieldset>
+    <footer class="filter__footer">
+      <button class="filter__btn filter__btn--match button" type="submit">Подобрать</button>
+      <button class="filter__btn filter__btn--reset button" type="reset">Сбросить</button>
+    </footer>
   </form>
 </section>

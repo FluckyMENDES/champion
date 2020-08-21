@@ -1,12 +1,12 @@
 // Главное меню
-(() => {
+// (() => {
 
+export const burgerMenu = () => {
   const menu = document.querySelector(`.menu`);
   const menuList = document.querySelector(`.menu__list`);
   const burger = document.querySelector(`.header__burger`);
   // const closeBtn = document.querySelector(`.menu__btn--close`);
   const body = document.querySelector(`.body`);
-
 
   burger.addEventListener(`click`, () => {
     openMenu();
@@ -88,5 +88,6 @@
       // unlock = true;
     }, timeout);
   }
+};
 
-})();
+// })();
