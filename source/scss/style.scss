@@ -47,5 +47,7 @@
 @import "index/_slider.scss";
 
 // catalog.html
-@import "catalog/filter.scss";
-@import "catalog/compare.scss";
+@import "catalog/_filter.scss";
+@import "catalog/_compare.scss";
+@import "catalog/_breadcrumbs.scss";
+@import "catalog/_sorting.scss";

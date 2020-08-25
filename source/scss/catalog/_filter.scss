@@ -8,6 +8,14 @@
     font-size: 14px;
     padding: 1px 3px;
     margin-left: 8px;
+
+    // Скрываем кнопки вверх и вниз
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
   }
 
 }
@@ -125,7 +133,9 @@
   }
 
   &--active {
-    transform: rotate(90deg);
+    & svg {
+      transform: rotate(90deg);
+    }
   }
 }
 .filter__subtitle {
@@ -137,6 +147,16 @@
   margin-bottom: 15px;
 }
 .filter__list {
+  transition: 1s all ease;
+  max-height: 1000px;
+
+  &--hide {
+    max-height: 0;
+
+    & .filter__item {
+      display: none;
+    }
+  }
 }
 .filter__item {
   margin-bottom: 10px;

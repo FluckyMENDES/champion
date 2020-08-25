@@ -340,3 +340,39 @@
   });
 
 })();
+
+
+// Выпадающий список пунктов фильтра
+(() => {
+
+  const dropdownButtons = document.querySelectorAll(`.filter__button--dropdown`);
+  dropdownButtons.forEach((element) => {
+    element.addEventListener(`click`, (evt) => {
+      changeIconClass(evt);
+      hideFilterList(element);
+    });
+  });
+
+  const changeIconClass = (evt) => {
+    evt.target.closest(`.filter__button--dropdown`).classList.toggle(`filter__button--dropdown--active`);
+  };
+
+  const hideFilterList = (element) => {
+    element.closest(`.filter__fieldset`).querySelector(`.filter__list`).classList.toggle(`filter__list--hide`);
+  };
+
+
+})();
+
+
+// Удаление пунктов в блоке "Сравнение"
+(() => {
+
+  const removeBtns = document.querySelectorAll(`.compare__btn--delete`);
+  removeBtns.forEach((element) => {
+    element.addEventListener(`click`, () => {
+      element.closest(`.compare__item`).remove();
+    });
+  });
+
+})();
